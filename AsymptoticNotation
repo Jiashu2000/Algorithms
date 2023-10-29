@@ -1,0 +1,27 @@
+# Asymptotic Notation
+
+When we use asymptotic notation, we are talking about worst-case running time.
+
+The worst-case running time for binary search is log(n)
+
+if f(n) is O(g(n)) this means that f(n) grows asymptotically no faster than g(n)
+if f(n) is Ω(g(n)) this means that f(n) grows asymptotically no slower than g(n)
+if f(n) is Θ(g(n)) this means that f(n) grows asymptotically at the same rate as g(n)
+
+Think of O as an upperbound, and Ω as a lower bound.
+These bounds can be tight or loose,but we prefer to make them tight as possible.
+If we have tight bounds where O and Ω have the same growth rate then we precisely know the growth rate.
+If we can precisely give the growth rate then we know Θ.
+
+So for log(n) we could say:
+log(n) is O(n^n) since log(n) grows asymptotically no faster than n^n
+log(n) is O(n) since log(n) grows asymptotically no faster than n
+log(n) is O(log(n)) since log(n) grows asymptotically no faster than log(n)
+We went from loose upper bounds to a tight upper bound
+
+log(n) is Ω(1) since log(n) grows asymptotically no slower than 1
+log(n) is Ω(log(log(n))) since log(n) grows asymptotically no slower than log(log(n))
+log(n) is Ω(log(n)) since log(n) grows asymptotically no slower than log(n)
+We went from loose lower bounds to a tight lower bound
+
+Since we have log(n) is O(log(n)) and Ω(log(n)) we can say that log(n) is Θ(log(n)).

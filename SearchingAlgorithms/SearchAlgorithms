@@ -1,0 +1,8 @@
+# Search Algorithms
+
+Search algorithms are designed to check or retrieve an element from any data structure
+where that element is being stored. They search for a target in the search space.
+
+Types of search algorithms:
+    - linear or sequential search
+    - binary search

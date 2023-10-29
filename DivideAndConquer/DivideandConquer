@@ -1,0 +1,7 @@
+# Divide and Conquer
+
+It’s first divided into smaller sub-problems then these subproblems are solved and later on these problems are combined to get the final solution.
+
+- Quick Sort
+- Merge Sort
+- Matrix Multiplication

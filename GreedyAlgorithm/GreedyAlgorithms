@@ -1,0 +1,15 @@
+# Greedy Algorithms
+
+Greedy Algorithm:
+    a method for solving optimization problems by taking decisions that result in the most
+    evident and immediate benefit irrespective of the final outcome.
+
+Use of Greedy Algorithm:
+    - Scheduling and Resource Allocation
+    - Minimum Spanning Trees
+    - Coin Change Problem
+
+Algorithms
+    - Kruskal's Minimum Spanning Tree (MST)
+    - Prim's Minimum Spanning Tree (MST)
+    - Dijkstra's Shortest Path

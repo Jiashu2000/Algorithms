@@ -1,0 +1,7 @@
+# Pattern Search Algorithms
+
+The Pattern Searching algorithms are sometimes also referred to as String Searching Algorithms and are considered as a part of the String algorithms. These algorithms are useful in the case of searching a string within another string.
+
+- Rabin Karp Algorithm
+- KMP Algorithm
+- Z Algorithm
