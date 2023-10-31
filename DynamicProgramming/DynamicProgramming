@@ -1,0 +1,112 @@
+# Dynamic Programming
+
+
+Dynamic programming is a tool that will help make your recursive code more efficient
+
+We should begin by identifying that we have a problem in front of us that requires the use of recursion.
+There might be some redundancy in the recursive calculations.
+The method of improvement is dynamic programming.
+
+Example: Leetcode 62 - unique path
+
+- Step 1: recursion
+    understand the recursive relationship to solve this problem
+    the number of unique paths from any given step (m, n) is the sum of
+    the number of unique paths from (m-1, n) and (m, n-1)
+
+    time: exponential
+    space: o(max(m, n))
+    
+    '''
+    class solution:
+        def uniquePaths(self, m, n):
+
+            def helper(m, n):
+                if m == 1 or n == 1:
+                    return 1
+                return helper(m-1, n) + helper(m, n-1)
+        
+            return helper(m, n)
+    '''
+
+- Step 2: Recursion + Memorization
+    dp can be used when
+        1. overlapping subproblems: you are solving the same subproblem multiple times over.
+        2. an optional substructure: by finding the optimal solution to a subproblem, you are able to
+            extract an optimal solution to the entire problem more-or-less for free.
+    
+    memorization: we do this by storing the result in a data structure that will allow us to
+            look the result up in the future in o(1) time.
+    
+    sacrifice space to improve time
+    
+    time: o(m * n)
+    space: o(m * n)
+    
+    '''
+    class Solution:
+        def uniquePath(self, m, n):
+            dp = [[0 for _ in range(n + 1)] for _ in range(m + 1)]
+
+            def helper(m, n):
+                if dp[m][n]:
+                    return dp[m][n]
+                elif m == 1 or n == 1: 
+                    dp[m][n] = 1
+                    return dp[m][n]
+                dp[m][n] = dp[m-1][n] + dp[m][n-1]
+                return dp[m][n]
+            
+            return helper(m, n)
+    '''
+
+- Step 3: Iteration + Tabulation
+    The third step involves solving the problem using iteration instead of recursion.
+    We will use tabulation instead of memorization
+    
+    tabulation will involve storing calculations in an array, while memorization most
+    commonly refers to storing calculations in a set, object, dictionary.
+    tabulation allows us to iteratively walk through an array without relying on recursive calls
+
+    The benefit to modifying to an itertion solution in the fact that your program will be able to
+    run larger inputs as it is no longer limited to the maximum size of the call stack.
+
+    time: o(n * m)
+    space: o(n * m)
+    
+    '''
+    class Solution:
+        
+        def uniquePaths(self, m, n):
+            dp = [[1 for _ in range(n)] for _ in range(m)]
+
+            for r in range(len(dp) - 2, - 1, -1):
+                for c in range(len(dp[r]) - 2, -1, -1):
+                    dp[r][c] = dp[r+1][c] + dp[r][c+1]
+                
+            return dp[0][0]
+    '''
+
+- Step 4: Iteration + Tabulation
+    there is an opportunity to trim down the space complexity
+
+    time: o(m+n)
+    space: o(n)
+    
+    '''
+    class Solution:
+        def uniquePaths(self, m, n):
+            dp = [[1 for _ in range(n)] for _ in range(2)]
+
+            for r in range(m-2, -1, -1):
+                for c in range(n-2, -1, -1):
+                    dp[0][c] = dp[1][c] + dp[0][c-1]
+                dp[1] = dp[0]
+
+            return dp[0][0]
+    '''
+
+classic problems
+    - 0/1 Knapsack Problem
+    - Longest Palindromic Subsequence (LPS)
+    - Longest Common Subsequence (LCS)
