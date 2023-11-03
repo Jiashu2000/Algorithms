@@ -69,17 +69,21 @@ class BFSGraph:
                 visited[u] = 1
         return top_order
 
-## Driver code  
-A = 6
-B = [[6, 3], [6, 1], [5, 1], [5, 2], [3, 4], [4, 2]]
-graph = BFSGraph(A)
-for u, v in B:
-    graph.add_edge(u, v)
-        
-res = graph.topological_sort()
-print(res) # [5, 6, 1, 3, 4, 2]
+# ## Driver code  
+# A = 6
+# B = [[6, 3], [6, 1], [5, 1], [5, 2], [3, 4], [4, 2]]
+# graph = BFSGraph(A)
+# for u, v in B:
+#     graph.add_edge(u, v)
+#         
+# res = graph.topological_sort()
+# print(res) # [5, 6, 1, 3, 4, 2]
 
-
+'''
+DFS itself ensures that you don't leave a node until its children have already been processed, 
+so if you add each node to a list when DFS finishes with it, 
+they will be added in (reverse) topological order.
+'''
 class DFSGraph:
 
     def __init__(self, vertices):
@@ -104,15 +108,15 @@ class DFSGraph:
                 self.helper(i, visited, res)
         return res
 
-## Driver code
-A = 6
-B = [[6, 3], [6, 1], [5, 1], [5, 2], [3, 4], [4, 2]]
-graph = DFSGraph(A)
-for u, v in B:
-    graph.add_edge(u, v)
-        
-res = graph.topological_sort()
-print(res) # [5, 6, 1, 3, 4, 2]
+# ## Driver code
+# A = 6
+# B = [[6, 3], [6, 1], [5, 1], [5, 2], [3, 4], [4, 2]]
+# graph = DFSGraph(A)
+# for u, v in B:
+#     graph.add_edge(u, v)
+#         
+# res = graph.topological_sort()
+# print(res) # [5, 6, 1, 3, 4, 2]
 
 '''
 useful links: 

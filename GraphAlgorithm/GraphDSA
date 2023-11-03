@@ -1,0 +1,50 @@
+# Graph Data Structure And Algorithms
+
+
+- Introduction to Graph
+    
+    1. Graph is composed of a set of vertices( V ) and a set of edges( E ). The graph is denoted by G(E, V)
+
+    2. Components of a Graph
+        - Vertices
+        - Edges
+
+    3. Types of Graph
+        - Null graph: if there is no edge in the graph
+        - Trivial graph: graph having only a vertex
+        - Undirected graph
+        - Directed graph
+        - Connected graph: one node can reach any other node
+        - Disconnected graph
+        - Regular graph: the degree of every vertex is equal to k
+        - Complete graph: each node is connected to every other node
+        - Cycle graph: the graph is a cycle itself.
+        - Cyclic graph: the graph containing at least one cycle.
+        - Directed acyclic graph: a directed graph that does not contain any cycle.
+        - Bipartite graph: a graph in which vertex can be divided into two sets such that in each set does not
+            contain any edge between them.
+        - Weight graph
+    
+    4. Tree v/s Graph
+        every tree is a graph but not all graphs will be trees.
+    
+    5. Representaiton of Graphs:
+        - adjacency matrix
+            - adding edge: o(1)
+            - removing edge: o(1)
+            - initializing: o(n*n)
+        - adjacency list
+            - adding edge: o(1)
+            - removing edge: o(n)
+            - inintializing: o(n)
+    
+    6. Basic Operations on Graphs
+        - insertion of node/edge
+        - deletion of node/edge
+        - searching on graphs
+        - traversal on graphs
+
+
+- BFS and DFS in Graph
+
+    Unlike trees, graphs may contain cycles, so we may come to the same node again. To avoid processing a node more than once, we divide the vertices into two categories: Visited and Not visited.
